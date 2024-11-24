@@ -4,19 +4,21 @@ export const uiDrag = {
             item.addEventListener("drop", (event) => {
                 event.preventDefault();  // Evitar el comportamiento por defecto
                 var data = JSON.parse(event.dataTransfer.getData("text"));
-                console.log(data);
                 var draggedElement = document.getElementById(data.id);
                 var rect = event.target.getBoundingClientRect();
                 var offsetX = event.clientX - rect.left;
                 var offsetY = event.clientY - rect.top;
 
-                draggedElement.style.position = "absolute";
-                draggedElement.style.left = offsetX - (draggedElement.offsetWidth / 2) + "px";
-                draggedElement.style.top = offsetY - (draggedElement.offsetHeight / 2) + "px";
-                draggedElement.style.backgroundColor = event.target.dataset.color; // =)
+                // Verificar si el contenedor de destino tiene el mismo palo que la carta arrastrada
+                if (event.target.dataset.palo === draggedElement.dataset.palo) {
+                    draggedElement.style.position = "absolute";
+                    draggedElement.style.left = offsetX - (draggedElement.offsetWidth / 2) + "px";
+                    draggedElement.style.top = offsetY - (draggedElement.offsetHeight / 2) + "px";
+                    draggedElement.style.backgroundColor = event.target.dataset.color;
 
-                if (!event.target.contains(draggedElement)) {
-                    event.target.appendChild(draggedElement);
+                    if (!event.target.contains(draggedElement)) {
+                        event.target.appendChild(draggedElement);
+                    }
                 }
             });
             item.addEventListener("dragover", (event) => {
@@ -32,7 +34,6 @@ export const uiDrag = {
                     mensaje: "Esto es una prueba"
                 }
                 event.dataTransfer.setData("text", JSON.stringify(sendData));
-                console.log(event);
             })
         })
     }
