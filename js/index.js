@@ -1,3 +1,3 @@
 import { uiDrag } from "../js/uiDrag.js";
 // Permitir el arrastre dentro del contenedor
-uiDrag.init(".contenedor",".elemento");
+uiDrag.init(".contenedor",".carta");
