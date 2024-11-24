@@ -5,34 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arrastrar y Soltar</title>
   <style>
+    .mesa {
+        display: flex;
+    }
     .contenedor {
-      width: 400px;
+      width: 500px;
       height: 300px;
       border: 2px dashed #ccc;
       position: relative;
     }
-    .elemento {
-      width: 100px;
-      height: 100px;
-      background-color: lightblue;
+    .contenedor-cartas {
+      display: flex;
+      flex-wrap: wrap;
+    }	
+    .carta {
+      width: 50px;
+      height: 50px;
       margin: 10px;
       text-align: center;
-      line-height: 100px;
+      line-height: 50px;
       border-radius: 10px;
       cursor: move;
+    }
+    .bastos {
+        background-color: rgb(56, 202, 56);
+    }
+    .espadas {
+        background-color: lightblue;
+    }
+    .copas {
+        background-color: rgb(233, 45, 45);
+    }
+    .oros {
+        background-color: rgb(194, 194, 46);
     }
   </style>
 </head>
 <body>
 
-  <div class="contenedor" data-color="blue">
-    <div class="elemento" id="elemento1" >Elemento 1</div>
-    <div class="elemento" id="elemento2" >Elemento 2</div>
-    <div class="elemento" id="elemento3" >Elemento 3</div>
-  </div>
-  <div class="contenedor" data-color="#131313">
-  </div>
-  <div class="contenedor" data-color="red">
+    <div class="mesa">
+        <div class="contenedor" data-palo="bastos">BASTOS</div>
+        <div class="contenedor" data-palo="espadas">ESPADAS</div>
+        <div class="contenedor" data-palo="copas">COPAS</div>
+        <div class="contenedor" data-palo="oros">OROS</div>
+    </div>
+
+  <div class="contenedor-cartas">
+    <div class="carta bastos" data-palo="bastos">1</div>
+    <div class="carta bastos" data-palo="bastos">2</div>
+    <div class="carta bastos" data-palo="bastos">3</div>
+    <div class="carta bastos" data-palo="bastos">4</div>
+    <div class="carta bastos" data-palo="bastos">5</div>
+    <div class="carta bastos" data-palo="bastos">6</div>
+    <div class="carta bastos" data-palo="bastos">7</div>
+    <div class="carta bastos" data-palo="bastos">8</div>
+    <div class="carta bastos" data-palo="bastos">9</div>
+    <div class="carta bastos" data-palo="bastos">10</div>
+
+    <div class="carta espadas" data-palo="espadas">1</div>
+    <div class="carta espadas" data-palo="espadas">2</div>
+    <div class="carta espadas" data-palo="espadas">3</div>
+    <div class="carta espadas" data-palo="espadas">4</div>
+    <div class="carta espadas" data-palo="espadas">5</div>
+    <div class="carta espadas" data-palo="espadas">6</div>
+    <div class="carta espadas" data-palo="espadas">7</div>
+    <div class="carta espadas" data-palo="espadas">8</div>
+    <div class="carta espadas" data-palo="espadas">9</div>
+    <div class="carta espadas" data-palo="espadas">10</div>
+
+    <div class="carta copas" data-palo="copas">1</div>
+    <div class="carta copas" data-palo="copas">2</div>
+    <div class="carta copas" data-palo="copas">3</div>
+    <div class="carta copas" data-palo="copas">4</div>
+    <div class="carta copas" data-palo="copas">5</div>
+    <div class="carta copas" data-palo="copas">6</div>
+    <div class="carta copas" data-palo="copas">7</div>
+    <div class="carta copas" data-palo="copas">8</div>
+    <div class="carta copas" data-palo="copas">9</div>
+    <div class="carta copas" data-palo="copas">10</div>
+
+    <div class="carta oros" data-palo="oros">1</div>
+    <div class="carta oros" data-palo="oros">2</div>
+    <div class="carta oros" data-palo="oros">3</div>
+    <div class="carta oros" data-palo="oros">4</div>
+    <div class="carta oros" data-palo="oros">5</div>
+    <div class="carta oros" data-palo="oros">6</div>
+    <div class="carta oros" data-palo="oros">7</div>
+    <div class="carta oros" data-palo="oros">8</div>
+    <div class="carta oros" data-palo="oros">9</div>
+    <div class="carta oros" data-palo="oros">10</div>
   </div>
 
   <script type="module" src="js/index.js"></script>
