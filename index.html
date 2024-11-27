@@ -3,55 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Arrastrar y Soltar</title>
-  <style>
-    .mesa {
-        display: flex;
-    }
-    .contenedor {
-      width: 500px;
-      height: 300px;
-      border: 2px dashed #ccc;
-      position: relative;
-    }
-    .contenedor-cartas {
-      display: flex;
-      flex-wrap: wrap;
-    }	
-    .carta {
-      width: 50px;
-      height: 50px;
-      margin: 10px;
-      text-align: center;
-      line-height: 50px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .bastos {
-        background-color: rgb(56, 202, 56);
-    }
-    .espadas {
-        background-color: lightblue;
-    }
-    .copas {
-        background-color: rgb(233, 45, 45);
-    }
-    .oros {
-        background-color: rgb(194, 194, 46);
-    }
-  </style>
 </head>
 <body>
-
-    <div class="mesa">
-        <div class="contenedor" data-palo="bastos">BASTOS (VERDE)</div>
-        <div class="contenedor" data-palo="espadas">ESPADAS (AZUL)</div>
-        <div class="contenedor" data-palo="copas">COPAS (ROJO)</div>
-        <div class="contenedor" data-palo="oros">OROS (AMARILLO)</div>
-    </div>
-
-  <div class="contenedor-cartas"></div>
-
   <script type="module" src="js/index.js"></script>
 </body>
 </html>

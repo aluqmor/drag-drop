@@ -3,7 +3,7 @@ import { CartaFactory } from "../js/cartaFactory.js";
 
 export class Juego {
     constructor(contenedorCartasSelector, contenedorSelector, cartaSelector) {
-        this.contenedorCartas = document.querySelector(contenedorCartasSelector);
+        this.contenedorCartasSelector = contenedorCartasSelector;
         this.contenedorSelector = contenedorSelector;
         this.cartaSelector = cartaSelector;
         this.palos = ['bastos', 'espadas', 'copas', 'oros'];
@@ -11,8 +11,39 @@ export class Juego {
     }
 
     iniciar() {
+        this.crearElementosDOM();
         this.crearCartas();
         this.drag();
+    }
+
+    crearElementosDOM() {
+        const body = document.body;
+
+        const mesa = document.createElement('div');
+        mesa.classList.add('mesa');
+
+        const contenedores = [
+            { palo: 'bastos', texto: 'BASTOS (VERDE)' },
+            { palo: 'espadas', texto: 'ESPADAS (AZUL)' },
+            { palo: 'copas', texto: 'COPAS (ROJO)' },
+            { palo: 'oros', texto: 'OROS (AMARILLO)' }
+        ];
+
+        contenedores.forEach(contenedorInfo => {
+            const contenedor = document.createElement('div');
+            contenedor.classList.add('contenedor');
+            contenedor.dataset.palo = contenedorInfo.palo;
+            contenedor.textContent = contenedorInfo.texto;
+            mesa.appendChild(contenedor);
+        });
+
+        const contenedorCartas = document.createElement('div');
+        contenedorCartas.classList.add('contenedor-cartas');
+
+        body.appendChild(mesa);
+        body.appendChild(contenedorCartas);
+
+        this.contenedorCartas = contenedorCartas;
     }
 
     crearCartas() {
