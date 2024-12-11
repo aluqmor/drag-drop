@@ -47,11 +47,18 @@ export class Juego {
     }
 
     crearCartas() {
+        const cartas = [];
         this.palos.forEach(palo => {
             this.numeros.forEach(numero => {
                 const carta = CartaFactory.crearCarta(palo, numero);
-                this.contenedorCartas.appendChild(carta);
+                cartas.push(carta);
             });
+        });
+
+        cartas.sort(() => Math.random() - 0.5);
+
+        cartas.forEach(carta => {
+            this.contenedorCartas.appendChild(carta);
         });
     }
 
